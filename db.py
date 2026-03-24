@@ -19,8 +19,9 @@ def get_db_connection():
     return conn
 
 
-def load_json(name: str):
-    path = os.path.join(DATA_DIR, f"{name}.json")
+def load_json(name):
+    # Render pe data folder backend ke andar hai
+    path = os.path.join(os.path.dirname(__file__), 'data', f"{name}.json")
     with open(path) as f:
         return json.load(f)
 
